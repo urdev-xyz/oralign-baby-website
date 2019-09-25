@@ -43,6 +43,7 @@ module.exports = {
       }
     },
     `gatsby-plugin-sass`,
+    `gatsby-background-image-es5`,
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

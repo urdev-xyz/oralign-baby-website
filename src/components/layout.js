@@ -11,6 +11,7 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import HamburgerMenu from 'react-hamburger-menu'
 import oralignLogo from '../images/oralignLogo.svg'
 
+
 import "./layout.scss"
 
 const Layout = ({ children }) => {
@@ -44,6 +45,17 @@ const Layout = ({ children }) => {
           }
         }
       }
+      allContentfulSocial {
+        nodes {
+          socialName,
+          socialLink,
+          socialIcon {
+            file {
+              url
+            }
+          }
+        }
+      }
     }
   `)
 
@@ -52,6 +64,10 @@ const Layout = ({ children }) => {
 
   const announcement = data.allContentfulAnnouncement.nodes[0]
   const navigation = data.allContentfulNavigation.nodes[0].items.nav
+  const socials = data.allContentfulSocial.nodes
+
+  console.log(socials)
+
 
   const handleClick= function() {
     setState({
@@ -60,40 +76,47 @@ const Layout = ({ children }) => {
 }
 
   return (
-    <div className="navigation box-shadow">
-      <nav>
-        {announcement.show ? <div className="announcment"><a target="_Blank" href={announcement.link}>{announcement.message}</a></div> : <></>}
-        <nav className="main-navigation">
-          <div className="space"></div>
-          <img src={oralignLogo}></img>
-          <div className="space">
-            <HamburgerMenu
-                isOpen={state.open}
-                menuClicked={handleClick.bind(this)}
-                width={30}
-                height={20}
-                strokeWidth={3}
-                rotate={0}
-                color='blue'
-                borderRadius={0}
-                animationDuration={0.5}
-            />
-          </div>
-        </nav>
-        <nav className={`sub-navigation ${state.open ? `menu-open` : `menu-closed`}`}>
-          {navigation.map(item => {
-            if (item.nesting === false) {
-              return <Link className="navigation-item" to={ item.path }>{item.title}</Link>
-            }
-            else if (item.nesting === true) {
+    <div className="layout">
+      <div className="navigation box-shadow">
+        <nav>
+          {announcement.show ? <div className="announcment"><a target="_Blank" href={announcement.link}>{announcement.message}</a></div> : <></>}
+          <nav className="main-navigation">
+            <div className="space"></div>
+            <img src={oralignLogo}></img>
+            <div className="space">
+              <HamburgerMenu
+                  isOpen={state.open}
+                  menuClicked={handleClick.bind(this)}
+                  width={30}
+                  height={20}
+                  strokeWidth={3}
+                  rotate={0}
+                  color='blue'
+                  borderRadius={0}
+                  animationDuration={0.5}
+              />
+            </div>
+          </nav>
+          <nav className={`sub-navigation ${state.open ? `menu-open` : `menu-closed`}`}>
+            {navigation.map(item => {
+              if (item.nesting === false) {
+                return <Link className="navigation-item" to={ item.path }>{item.title}</Link>
+              }
+              else if (item.nesting === true) {
 
-            }
-          })}
+              }
+            })}
+            <div className="navigation-social-container">
+            {socials.map(social => {
+              return <Link to='/' className="navigation-social">
+                <img src={social.socialIcon.file.url}></img>
+              </Link>
+            })}
+            </div>
+          </nav>
         </nav>
-      </nav>
-  
-        <main>{children}</main>
-
+      </div>
+      <main>{children}</main>
     </div>
   )
 }

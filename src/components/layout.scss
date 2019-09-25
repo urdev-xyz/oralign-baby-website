@@ -16,11 +16,15 @@ $roboto: 'Roboto', sans-serif;
   box-shadow: 1px 1px 7px lightgrey;
 }
 // LAYOUT
+main {
+  margin-top: 80px;
+}
   //NAV
   .navigation {
     width: 100vw;
     overflow-x: hidden;
     position: fixed;
+    top: 0;
 
 
     text-align: center;
@@ -93,6 +97,9 @@ $roboto: 'Roboto', sans-serif;
           visibility: hidden;
         }
       }
+      .navigation-social-container {
+        display: none;
+      }
     }
     @media screen and (max-width: 760px) {
       .sub-navigation {
@@ -115,6 +122,22 @@ $roboto: 'Roboto', sans-serif;
         a:nth-child(1) {
           margin-top: 20px;
         }
+        .navigation-social-container {
+
+          .navigation-social {
+            display: inline-block;
+            background: $std-blue;
+            border-radius: 100%;
+            padding: 10px;
+            margin-left: 10px;
+            &:nth-child(1) {
+              margin-left: 0px;
+            }
+            img {
+              height: 28px;
+            }
+          }
+        }
       }
       .menu-open {
         animation: slideout .8s forwards;
@@ -133,6 +156,31 @@ $roboto: 'Roboto', sans-serif;
     }
   }
   
+
+  .header-background {
+    height: 500px;
+    width: 100%;
+  }
+  .blue-tint {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #6FA9D7;
+    opacity: .7;
+  }
+  .header-content {
+    height: 100%;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    z-index: 9999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+  }
 
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0-modified | 20110126
