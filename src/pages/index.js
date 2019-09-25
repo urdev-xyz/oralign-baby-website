@@ -4,8 +4,12 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import BackgroundImage from 'gatsby-background-image-es5'
 
+import mypaciLogo from '../images/mypaciLogo.svg'
+
 import SEO from "../components/seo"
 import Img from "gatsby-image"
+
+import {WalmartButton} from '../components/buttons'
 
 
 const IndexPage = ({ data }) => (
@@ -26,8 +30,20 @@ const IndexPage = ({ data }) => (
         >
           <div className="blue-tint"/>
           <div className="header-content">
-            HELLO WORLD
-          </div>
+            <img src={mypaciLogo}></img>
+            <section className="header-tagline">
+              3 years to design,<br/>
+              30 years of experience,<br/>
+              Seconds to see the difference.
+            </section>
+            <section className="header-subline">
+              keeping little fingers safe
+            </section>
+            <div className="button-container">
+              <WalmartButton/>
+              <Link to="/somethi"><button className="white">Learn More</button></Link>
+            </div>
+            </div>
         </BackgroundImage>
     </header>
   </Layout>
