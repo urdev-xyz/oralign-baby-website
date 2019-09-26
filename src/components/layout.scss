@@ -165,50 +165,92 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  .blue-tint {
-    position: absolute;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: #6FA9D7;
-    opacity: .7;
-  }
-  .header-content {
-    height: 100%;
-    width: 100%;
-    top: 60px;
-    padding: 60px 0 30px 0;
-    max-width: 1000px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 9999;
-    img {
-      width: 10rem;
+    .blue-tint {
+      position: absolute;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: #6FA9D7;
+      opacity: .7;
     }
-    .header-tagline {
-      margin-top: 15px;
-      font-size: 2rem;
-      font-weight: 300;
-      color: $std-white;
-      line-height: 2.7rem;
-    }
-    .header-subline {
-      margin-top: 15px;
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: $std-white;
-      line-height: 2.7rem;
-    }
-    .button-container {
+    .header-content {
+      height: 100%;
+      width: 100%;
+      top: 60px;
+      padding: 60px 0 30px 0;
+      max-width: 1000px;
       display: flex;
-      margin-top: 15px;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 9999;
+      .header-content-inner {
+        padding: 0 30px;
+        img {
+        width: 10rem;
+      }
+      .header-tagline {
+        margin-top: 15px;
+        font-size: 2rem;
+        font-weight: 300;
+        color: $std-white;
+        line-height: 2.7rem;
+      }
+      .header-subline {
+        margin-top: 15px;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: $std-white;
+        line-height: 2.7rem;
+      }
+      .button-container {
+        display: flex;
+        margin-top: 15px;
+        .walmart-buy-now {
+          min-width: 160px;
+        }
+        button {
+          height: 100%;
+        }
+      }
+      }
+    }
+    @media screen and (max-width: 760px) {
+      .header-content {
+        padding: 30px 0;
+        text-align: center;
+        .button-container {
+          display: flex;
+          justify-content: center;
+          .walmart-buy-now {
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 500px) {
+      .header-content {
+        .header-content-inner {
+          .header-tagline {
+            font-size: 1.6rem;
+          }
+          .header-subline {
+            margin: 0;
+          }
+        }
+        .button-container {
+          display: flex;
+          justify-content: center;
+          .walmart-buy-now {
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 500px) {
       button {
-        
+        padding: 5px;
       }
     }
   }
+
 
   button {
     border-radius: 4px;

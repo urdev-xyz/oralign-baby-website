@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
+
 import Layout from "../components/layout"
 import BackgroundImage from 'gatsby-background-image-es5'
 
@@ -30,6 +31,7 @@ const IndexPage = ({ data }) => (
         >
           <div className="blue-tint"/>
           <div className="header-content">
+            <div className="header-content-inner">
             <img src={mypaciLogo}></img>
             <section className="header-tagline">
               3 years to design,<br/>
@@ -42,6 +44,7 @@ const IndexPage = ({ data }) => (
             <div className="button-container">
               <WalmartButton/>
               <Link to="/somethi"><button className="white">Learn More</button></Link>
+            </div>
             </div>
             </div>
         </BackgroundImage>
