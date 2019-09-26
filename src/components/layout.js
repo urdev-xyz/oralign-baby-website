@@ -11,6 +11,8 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import HamburgerMenu from 'react-hamburger-menu'
 import oralignLogo from '../images/oralignLogo.svg'
 import Helmet from 'react-helmet'
+import Fade from 'react-reveal/Fade';
+
 
 
 import "./layout.scss"
@@ -82,7 +84,8 @@ const Layout = ({ children }) => {
           <meta charSet="utf-8" />
           <script>{`(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//affil.walmart.com/buttons/buynow.min.js"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'walmart-buynow-js'));`}</script>
         </Helmet>
-      <div className="navigation box-shadow">
+        <Fade>
+        <div className="navigation box-shadow">
         <nav>
           {announcement.show ? <div className="announcment"><a target="_Blank" href={announcement.link}>{announcement.message}</a></div> : <></>}
           <nav className="main-navigation">
@@ -121,6 +124,8 @@ const Layout = ({ children }) => {
           </nav>
         </nav>
       </div>
+        </Fade>
+      
       <main>{children}</main>
     </div>
   )

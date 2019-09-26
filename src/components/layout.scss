@@ -212,6 +212,12 @@ main {
           height: 100%;
         }
       }
+      span {
+        display: block;
+        margin-top: 35px;
+        color: $std-white;
+        font-size: 1.2rem;
+      }
       }
     }
     @media screen and (max-width: 760px) {
@@ -229,11 +235,15 @@ main {
     @media screen and (max-width: 500px) {
       .header-content {
         .header-content-inner {
+          padding: 0 15px;
           .header-tagline {
             font-size: 1.6rem;
           }
           .header-subline {
             margin: 0;
+          }
+          span {
+            font-size: 1rem;
           }
         }
         .button-container {
@@ -250,6 +260,89 @@ main {
       }
     }
   }
+
+.product-preview-wrapper {
+  display: block;
+  background: $std-pink;
+  text-decoration: none;
+
+  &:nth-child(2n) {
+    background: $std-purple;
+  }
+  .product-card-preview {
+    padding: 15px;
+    display: flex;
+    justify-content: center;    
+    .product-card-preview-inner {
+      width: 100%;
+      max-width: 1000px;
+      display: flex;
+      align-items: center;
+      img {
+        border-radius: 4px;
+        height: 128px;
+      }
+      .product-card-preview-content {
+        padding: 0 15px;
+        color: $std-white;
+        display: flex;
+        flex-basis: 100%;
+      flex: 1;
+      width: 100%;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        h1 {
+        }
+        p {
+          margin-top: 15px;
+          font-weight: 300;
+          width: 100%;
+        }
+        a {
+          color: $std-white;
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+}
+
+.product-preview-container {
+
+}
+@media screen and (min-width: 1000px) {
+  .product-preview-container {
+    display: flex;
+    .product-preview-wrapper {
+      width: 50%;
+      .product-card-preview {
+        justify-content: flex-start;
+        .product-card-preview-inner {
+          max-width: 600px;
+        }
+      }
+    }
+  }
+}
+
+.home-section {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  #useOne {
+    padding: 30px 0;
+    width: 100%;
+    max-width: 600px;
+    font-weight: 300;
+    text-align: center;
+    line-height: 2.7rem;
+    font-size: 2rem;
+    color: $std-blueish-grey;
+  }
+
+}
+
 
 
   button {

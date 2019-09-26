@@ -11,9 +11,14 @@ import SEO from "../components/seo"
 import Img from "gatsby-image"
 
 import {WalmartButton} from '../components/buttons'
+import {ProductCardPreview} from '../components/ProductCard'
 
 
-const IndexPage = ({ data }) => (
+
+const IndexPage = ({ data }) => {
+  const products = data.allContentfulProduct.nodes
+  console.log(products)
+  return (
   <Layout>
     <SEO title="Home" />
     <header>
@@ -45,12 +50,23 @@ const IndexPage = ({ data }) => (
               <WalmartButton/>
               <Link to="/somethi"><button className="white">Learn More</button></Link>
             </div>
+            <span>MADE IN THE USA | 100% MEDICAL GRADE SILICONE</span>
             </div>
             </div>
         </BackgroundImage>
     </header>
+    <div className="product-preview-container">
+    {products.map(product => {
+      return (
+        <ProductCardPreview name={product.name} description={product.description} src={product.image.file.url}/>
+      )
+    })}
+    </div>
+    <div className="home-section">
+      <h1 id="useOne">The only 100% silicone pacifier that will eliminate the chance of finger entrapment and finger strangulation. </h1>
+    </div>
   </Layout>
-)
+)}
 export const query = graphql`
   query {
     desktop: file(relativePath: { eq: "hero.jpeg" }) {
@@ -61,11 +77,14 @@ export const query = graphql`
       }
     }
     
-      allContentfulReview {
+      allContentfulProduct {
         nodes {
           name,
-          stars,
-          review
+          description,
+          price,
+          image {
+            file
+          }
         }
       }
   }
