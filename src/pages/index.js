@@ -83,7 +83,9 @@ export const query = graphql`
           description,
           price,
           image {
-            file
+            file {
+              url
+            }
           }
         }
       }
