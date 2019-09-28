@@ -12,15 +12,20 @@ import Img from "gatsby-image"
 
 import {WalmartButton} from '../components/buttons'
 import {ProductCardPreview} from '../components/ProductCard'
+import { Star, ReviewCard } from '../components/Review'
+import Fade from 'react-reveal/Fade';
+
 
 
 
 const IndexPage = ({ data }) => {
   const products = data.allContentfulProduct.nodes
-  console.log(products)
+  const reviews = data.allContentfulReview.nodes
+  console.log(reviews)
   return (
   <Layout>
     <SEO title="Home" />
+    <Fade>
     <header>
     <BackgroundImage
           Tag="section"
@@ -55,6 +60,7 @@ const IndexPage = ({ data }) => {
             </div>
         </BackgroundImage>
     </header>
+    </Fade>
     <div className="product-preview-container">
     {products.map(product => {
       return (
@@ -62,9 +68,21 @@ const IndexPage = ({ data }) => {
       )
     })}
     </div>
+    <Fade bottom>
     <div className="home-section">
-      <h1 id="useOne">The only 100% silicone pacifier that will eliminate the chance of finger entrapment and finger strangulation. </h1>
+        <h1 id="useOne">The only 100% silicone pacifier that will eliminate the chance of finger entrapment and finger strangulation. </h1>
     </div>
+    </Fade>
+    <div className="review-container home-section">
+      {reviews.map(review => {
+        return (
+          <Fade bottom>
+          <ReviewCard data={review}></ReviewCard>
+          </Fade>
+        )
+      })}
+    </div>
+    
   </Layout>
 )}
 export const query = graphql`
@@ -82,6 +100,18 @@ export const query = graphql`
           name,
           description,
           price,
+          image {
+            file {
+              url
+            }
+          }
+        }
+      }
+      allContentfulReview {
+        nodes {
+          name,
+          stars,
+          review,
           image {
             file {
               url
