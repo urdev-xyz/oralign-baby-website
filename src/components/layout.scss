@@ -141,6 +141,7 @@ main {
       }
       .menu-open {
         animation: slideout .8s forwards;
+        box-shadow: -2px 0px 5px -1px lightgrey;
       }
       .menu-closed {
         right: -100%;
