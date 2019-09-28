@@ -84,7 +84,6 @@ const Layout = ({ children }) => {
           <meta charSet="utf-8" />
           <script>{`(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//affil.walmart.com/buttons/buynow.min.js"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'walmart-buynow-js'));`}</script>
         </Helmet>
-        <Fade>
         <div className="navigation box-shadow">
         <nav>
           {announcement.show ? <div className="announcment"><a target="_Blank" href={announcement.link}>{announcement.message}</a></div> : <></>}
@@ -124,7 +123,6 @@ const Layout = ({ children }) => {
           </nav>
         </nav>
       </div>
-        </Fade>
       
       <main>{children}</main>
     </div>
