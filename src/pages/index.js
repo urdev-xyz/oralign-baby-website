@@ -11,7 +11,7 @@ import SEO from "../components/seo"
 import Img from "gatsby-image"
 
 import {WalmartButton} from '../components/buttons'
-import {ProductCardPreview} from '../components/ProductCard'
+import {ProductCardPreview, ProductCard} from '../components/ProductCard'
 import { Star, ReviewCard } from '../components/Review'
 import Fade from 'react-reveal/Fade';
 
@@ -210,7 +210,13 @@ rejection in contrast to some pacifiers that require moving up to stiffer, highe
       </div>
       </Fade>
     </div>
-    
+    <div className="products-container home-section">
+    {products.map(product => {
+      return (
+        <Fade bottom><ProductCard name={product.name} price={product.price} description={product.description} src={product.image.file.url}/></Fade>
+      )
+    })}
+    </div>    
   </Layout>
 )}
 export const query = graphql`

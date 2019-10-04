@@ -543,6 +543,117 @@ main {
     }
   }
 
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+
+  .product-card {
+    margin-top: 15px;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    img {
+      height: auto;
+      width: 50%;
+    }
+    .product-card-content {
+      padding: 30px 15px;
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        margin: 15px 0 30px 0;
+        color: $std-blueish-grey;
+        font-weight: 300;
+      }
+    }
+    .price {
+      font-weight: 300;
+      font-size: 2rem;
+    }
+    .button-container {
+      display: flex;
+      margin-top: 15px;
+      .walmart-buy-now {
+        min-width: 160px;
+      }
+      button {
+        color: $std-white;
+        background: $std-blue;
+        height: 100%;
+      }
+      button:hover {
+        background: #50A1CA;
+      }
+    }
+    &:nth-child(2) {
+      flex-direction: row-reverse;
+      .product-card-content {
+        padding: 30px 15px;
+        text-align: right; 
+        h1 {
+          font-size: 2rem;
+        }
+        p {
+          margin-top: 15px;
+          color: $std-blueish-grey;
+          font-weight: 300;
+        }
+        .button-container {
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .product-card {
+      flex-direction: column;
+      img {
+        width: 100%;
+      }
+      .button-container {
+        justify-content: left;
+        flex-wrap: wrap;
+        .walmart-buy-now {
+          margin-right: 0 !important;
+          margin-bottom: 15px;
+          border-radius: 4px;
+          background: #f47321;
+          display: flex;
+          justify-content: center;
+        }
+        * {
+          width: 100%;
+        }
+      }
+
+      &:nth-child(2) {
+        flex-direction: column;
+        .product-card-content {
+          text-align: left;
+          .button-container {
+            justify-content: left;
+            flex-wrap: wrap;
+            .walmart-buy-now {
+              margin-right: 0;
+              margin-bottom: 15px;
+              border-radius: 4px;
+              background: #f47321;
+              display: flex;
+              justify-content: center;
+            }
+            * {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0-modified | 20110126
    License: none (public domain)
