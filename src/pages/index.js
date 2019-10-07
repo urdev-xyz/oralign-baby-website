@@ -257,6 +257,7 @@ rejection in contrast to some pacifiers that require moving up to stiffer, highe
         )
       })}
     </div>
+    <Fade>
     <div className="our-mission home-section">
       <div className="our-mission-image"></div>
       <div className="our-mission-content">
@@ -264,6 +265,7 @@ rejection in contrast to some pacifiers that require moving up to stiffer, highe
         <button>Read More</button>
       </div>
     </div>
+    </Fade>
   </Layout>
 )}
 export const query = graphql`

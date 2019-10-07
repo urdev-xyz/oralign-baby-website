@@ -157,6 +157,40 @@ main {
       }
     }
   }
+
+  .footer {
+    background: $std-blue;
+    color: $std-white;
+    width: 100%;
+    min-height: 200px;
+    padding: 15px 0;
+
+    svg {
+      fill: $std-white;
+    }
+    ul {
+      padding: 15px;
+      margin: 0 auto;
+      h1 {
+        font-weight: 500;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+      li {
+        a {
+          color: white;
+          text-decoration: none;
+          margin-bottom: 15px; 
+        }
+      }
+    }
+    p {
+      width: 100%;
+      text-align: center;
+      color: $std-white;
+    }
+    
+  }
   
 
   .header-background {
@@ -713,6 +747,13 @@ main {
       color: $std-white;
       background: $std-blue;
     }
+  }
+  @media screen and (max-width: 750px){
+    .our-mission-image { width: 100%}
+    .our-mission-content { width: 100%;
+      margin-top: 15px;
+    }
+    
   }
 }
 
