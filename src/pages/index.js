@@ -15,12 +15,34 @@ import {ProductCardPreview, ProductCard} from '../components/ProductCard'
 import { Star, ReviewCard } from '../components/Review'
 import Fade from 'react-reveal/Fade';
 
+import { BLOCKS, MARKS } from "@contentful/rich-text-types"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+
+require('details-polyfill')
+
+
 
 
 
 const IndexPage = ({ data }) => {
   const products = data.allContentfulProduct.nodes
   const reviews = data.allContentfulReview.nodes
+  const questions = data.allContentfulQuestion.nodes
+  const awards = data.allContentfulAward.nodes
+
+  const Bold = ({ children }) => <span className="bold">{children}</span>
+  const Text = ({ children }) => <p className="align-center">{children}</p>
+  
+  const options = {
+    renderMark: {
+      [MARKS.BOLD]: text => <Bold>{text}</Bold>,
+    },
+    renderNode: {
+      [BLOCKS.PARAGRAPH]: (questions, children) => <Text>{children}</Text>,
+    },
+  }
+  
+
   console.log(reviews)
   return (
   <Layout>
@@ -216,7 +238,32 @@ rejection in contrast to some pacifiers that require moving up to stiffer, highe
         <Fade bottom><ProductCard name={product.name} price={product.price} description={product.description} src={product.image.file.url}/></Fade>
       )
     })}
-    </div>    
+    </div>
+    <Fade bottom><div className="faq-container home-section">
+      {questions.map(question => {
+        return (
+          <details>
+            <summary>{question.question}</summary>
+            <div>{documentToReactComponents(question.answer.json, options)}</div>
+          </details>
+        )
+      })}
+    </div>
+    </Fade>
+    <div className="award-container home-section">
+      {awards.map(award => {
+        return (
+          <div><Fade bottom><img src={award.image.file.url}></img></Fade></div>
+        )
+      })}
+    </div>
+    <div className="our-mission home-section">
+      <div className="our-mission-image"></div>
+      <div className="our-mission-content">
+        <p>Our mission at Oralign Baby is to discover and develop novel designs and solutions that have a meaningful benefit for the children of our world. All of our discovery and design is based on peer-reviewed clinical science and testing that is reproducible while all of our claims and benefits are equally verifiable.</p>
+        <button>Read More</button>
+      </div>
+    </div>
   </Layout>
 )}
 export const query = graphql`
@@ -253,8 +300,27 @@ export const query = graphql`
           }
         }
       }
+      allContentfulAward {
+        nodes {
+          name,
+          image {
+            file {
+              url
+            }
+          }
+        }
+      }
+      allContentfulQuestion {
+        nodes {
+          question,
+          answer {
+            json
+          }
+        }
+      }
   }
 `
+
 
 
 export default IndexPage

@@ -553,6 +553,24 @@ main {
     max-width: 1000px;
     display: flex;
     justify-content: center;
+    &:nth-child(2) {
+      flex-direction: row-reverse;
+      .product-card-content {
+        padding: 30px 15px;
+        text-align: right; 
+        h1 {
+          font-size: 2rem;
+        }
+        p {
+          margin-top: 15px;
+          color: $std-blueish-grey;
+          font-weight: 300;
+        }
+        .button-container {
+          justify-content: flex-end;
+        }
+      }
+    }
     img {
       height: auto;
       width: 50%;
@@ -587,24 +605,7 @@ main {
         background: #50A1CA;
       }
     }
-    &:nth-child(2) {
-      flex-direction: row-reverse;
-      .product-card-content {
-        padding: 30px 15px;
-        text-align: right; 
-        h1 {
-          font-size: 2rem;
-        }
-        p {
-          margin-top: 15px;
-          color: $std-blueish-grey;
-          font-weight: 300;
-        }
-        .button-container {
-          justify-content: flex-end;
-        }
-      }
-    }
+    
   }
   @media screen and (max-width: 800px) {
     .product-card {
@@ -649,6 +650,68 @@ main {
           }
         }
       }
+    }
+  }
+}
+
+
+.award-container {
+  display: flex;
+  justify-content: center;
+  div {
+    margin: 0 15px;
+    img {
+      height: 200px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $std-blueish-grey;
+  details {
+    width: 100%;
+    max-width: 1000px;
+    background: $std-white;
+    box-shadow: 1px 1px 7px lightgrey;
+    summary {
+      border: 1px solid $std-blueish-grey;
+      padding: 15px;
+      background: $std-white;
+    }
+    div {
+      padding: 15px;
+    }
+  }
+  details[open] summary ~ * {
+    animation: open .7s ease-in-out;
+  }
+  
+  @keyframes open {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+}
+
+.our-mission {
+  display: flex;
+  .our-mission-image {
+    background: $std-blueish-grey;
+    max-width: 500px;
+    width: 50%;
+    min-height: 300px;
+  }
+  .our-mission-content {
+    max-width: 500px;
+    width: 50%;
+    padding: 15px;
+    button {
+      margin-top: 30px;
+      color: $std-white;
+      background: $std-blue;
     }
   }
 }
