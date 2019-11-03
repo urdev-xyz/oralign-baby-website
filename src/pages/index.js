@@ -42,8 +42,6 @@ const IndexPage = ({ data }) => {
     },
   }
   
-
-  console.log(reviews)
   return (
   <Layout>
     <SEO title="Home" />
@@ -95,7 +93,7 @@ const IndexPage = ({ data }) => {
         <h1 id="useOne">The only 100% silicone pacifier that will eliminate the chance of finger entrapment and finger strangulation. </h1>
     </div>
     </Fade>
-    <div className="review-container home-section">
+    <div className="home-section">
       {reviews.map(review => {
         return (
           <Fade bottom>
