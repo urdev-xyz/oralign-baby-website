@@ -104,11 +104,7 @@ main {
     }
     @media screen and (max-width: 760px) {
       .sub-navigation {
-        position: fixed;
-        top: 80px;
-        bottom: 0;
-        right: 0%;
-        height: auto;
+        height: 100vh;
 
         border-top: 2px solid $std-blue;
 
