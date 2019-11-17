@@ -110,7 +110,7 @@ const Layout = ({ children }) => {
                 return <Link className="navigation-item" to={ item.path }>{item.title}</Link>
               }
               else if (item.nesting === true) {
-
+                    //TODO
               }
             })}
             <div className="navigation-social-container">
