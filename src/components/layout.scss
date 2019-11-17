@@ -145,15 +145,15 @@ main {
         box-shadow: -2px 0px 5px -1px lightgrey;
       }
       .menu-closed {
-        right: -100%;
+        transform: translateX(100%);
         
       }
       @keyframes slideout {
         from {
-          right: -100%;
+          transform: translateX(100%);
         }
         to {
-          right: 0%;
+          transform: translateX(0);
         }
       }
     }
