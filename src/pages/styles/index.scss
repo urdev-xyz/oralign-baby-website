@@ -4,11 +4,45 @@
     flex-direction: column;
     align-items: center;
     .page {
-        width: 100%;
+        padding: 15px;
         max-width: 1000px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        p {
+            padding: 15px 0;
+            text-align: left;
+            width: 100%;
+            line-height: 1.3;
+            font-size: 1.2rem;
+        }
+    }
+    .facts-page {
+        margin: 15px;
+        border-top: 3px solid #0C8CCD;
+
+        .fact-links {
+            margin-top: 25px;
+            border-top: 3px solid #0C8CCD;
+            width: 100%;
+        }
+        h1 {
+            color: #0C8CCD;
+            font-weight: 700;
+            font-size: 2rem;
+            padding: 15px 0 0 0;
+        }
+        h2 {
+            padding-top: 30px;
+            padding-bottom: 15px;
+            font-weight: 500;
+            font-size: 1.2rem
+        }
+        a {
+            color: #0C8CCD;
+            margin-bottom: 15px;
+            display: block;
+        }
     }
 }
 

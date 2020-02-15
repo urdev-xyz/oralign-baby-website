@@ -5,7 +5,7 @@ import {WalmartButton} from '../components/buttons'
 export class ProductCardPreview extends React.Component{
     render() {
         return (
-            <Link className="product-preview-wrapper">
+            <Link to="/product/mypaci" className="product-preview-wrapper">
             <div className="product-card-preview">
                 <div className="product-card-preview-inner">
                     <img src={this.props.src}/>
