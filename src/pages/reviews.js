@@ -28,9 +28,14 @@ const Reviews = ({data}) => {
           <div className="review-container">
             {reviews.map(review => {
               return (
+                <>
                 <Fade bottom>
                   <ReviewCard data={review}></ReviewCard>
                 </Fade>
+                <Fade bottom>
+                  <ReviewCard data={review}></ReviewCard>
+                </Fade>
+                </>
               )
             })}
           </div>

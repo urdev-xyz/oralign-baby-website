@@ -5,6 +5,7 @@ export class PageHeader extends React.Component{
     styles = {
         width: '100%',
         minHeight: '120px',
+        marginBottom: 15,
         backgroundColor: '#9b9b9b',
         display: 'flex',
         justifyContent: 'center',
@@ -13,12 +14,16 @@ export class PageHeader extends React.Component{
         fontSize: "2rem",
         fontWeight: '300'
     }
+    test = {
+        width: 'auto',
+        textAlign: 'center'
+    }
 
     render() {
 
         return (
             <div style={this.styles} className="page-header">
-                {this.props.pageTitle}
+                <p style={this.test}>{this.props.pageTitle}</p>
             </div>
         )
     }

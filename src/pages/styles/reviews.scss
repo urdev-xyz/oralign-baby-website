@@ -18,6 +18,10 @@
     flex-basis: 100%;
     flex: 1;
     padding: 30px;
+    flex-wrap: wrap;
+    .react-reveal {
+      margin: 25px 0;
+    }
     .review-card {
         position: relative;
         max-width: 250px;
@@ -80,7 +84,7 @@
     @media screen and (max-width: 750px ) {
         .review-card {
           margin-top: 64px; 
-    
+          margin: 15px;
         }
       
     }
