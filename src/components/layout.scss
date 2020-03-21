@@ -20,12 +20,14 @@ main {
   margin-top: 80px;
 
 }
+
   //NAV
   .navigation {
     width: 100vw;
     overflow-x: hidden;
     position: fixed;
     top: 0;
+    height: 110px;
 
 
     text-align: center;
@@ -139,6 +141,8 @@ main {
       .menu-open {
         animation: slideout .8s forwards;
         box-shadow: -2px 0px 5px -1px lightgrey;
+        position: fixed;
+        height: 100%;
       }
       .menu-closed {
         transform: translateX(100%);
@@ -153,6 +157,10 @@ main {
         }
       }
     }
+    @media screen and (max-width: 760px) {
+      height: 80px;
+    }
+  
   }
 
   .footer {
@@ -239,6 +247,19 @@ main {
         margin-top: 15px;
         .walmart-buy-now {
           min-width: 160px;
+        }
+        .amazon-buy-now {
+          background: #000;
+          color: #fff;
+          min-width: 160px;
+          height: 100%;
+          text-align: center;
+          padding: 11px 15px;
+          border-radius: 4px;
+        }
+        a {
+          height: 100%;
+          display: block;
         }
         button {
           height: 100%;
@@ -627,6 +648,20 @@ main {
       .walmart-buy-now {
         min-width: 160px;
       }
+      a {
+        margin-bottom: 0;
+      }
+      .amazon-buy-now {
+        background: #000;
+        color: #fff;
+        min-width: 160px;
+        height: 100%;
+        text-align: center;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
       button {
         color: $std-white;
         background: $std-blue;
@@ -655,6 +690,21 @@ main {
           display: flex;
           justify-content: center;
         }
+        a {
+          margin-bottom: 15px;
+        }
+        .amazon-buy-now {
+          background: #000;
+          color: #fff;
+          min-width: 160px;
+          height: 100%;
+          text-align: center;
+          margin: 15px 0;
+          border-radius: 4px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
         * {
           width: 100%;
         }
@@ -674,6 +724,15 @@ main {
               background: #f47321;
               display: flex;
               justify-content: center;
+            }
+            .amazon-buy-now {
+              background: #000;
+              color: #fff;
+              min-width: 160px;
+              height: 100%;
+              text-align: center;
+              padding: 11px 15px;
+              border-radius: 4px;
             }
             * {
               width: 100%;
