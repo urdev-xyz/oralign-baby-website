@@ -10,7 +10,7 @@ import mypaciLogo from '../images/mypaciLogo.svg'
 import SEO from "../components/seo"
 import Img from "gatsby-image"
 
-import {WalmartButton} from '../components/buttons'
+import {WalmartButton, AmazonButton} from '../components/buttons'
 import {ProductCardPreview, ProductCard} from '../components/ProductCard'
 import { Star, ReviewCard } from '../components/Review'
 import Fade from 'react-reveal/Fade';
@@ -72,7 +72,7 @@ const IndexPage = ({ data }) => {
               keeping little fingers safe
             </section>
             <div className="button-container">
-              <WalmartButton/>
+              <AmazonButton/>
               <Link to="/somethi"><button className="white">Learn More</button></Link>
             </div>
             <span>MADE IN THE USA | 100% MEDICAL GRADE SILICONE</span>
@@ -260,7 +260,7 @@ rejection in contrast to some pacifiers that require moving up to stiffer, highe
       <div className="our-mission-image"></div>
       <div className="our-mission-content">
         <p>Our mission at Oralign Baby is to discover and develop novel designs and solutions that have a meaningful benefit for the children of our world. All of our discovery and design is based on peer-reviewed clinical science and testing that is reproducible while all of our claims and benefits are equally verifiable.</p>
-        <button>Read More</button>
+        <Link to="/our-story" ><button>Read More</button></Link>
       </div>
     </div>
     </Fade>

@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'gatsby'
-import {WalmartButton} from '../components/buttons'
+import {WalmartButton, AmazonButton} from '../components/buttons'
 
 export class ProductCardPreview extends React.Component{
     render() {
@@ -32,7 +32,7 @@ export class ProductCard extends React.Component{
                     <p className="price">${this.props.price}</p>
 
                     <div className="button-container">
-                        <WalmartButton/>
+                        <AmazonButton/>
                         <Link to="/somethi"><button className="white">Learn More</button></Link>
                     </div>
                 </div>
