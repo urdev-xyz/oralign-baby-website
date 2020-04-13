@@ -292,7 +292,9 @@ export const query = graphql`
         nodes {
           name,
           stars,
-          review,
+          review {
+            review
+          },
           image {
             file {
               url
