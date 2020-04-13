@@ -32,9 +32,6 @@ const Reviews = ({data}) => {
                 <Fade bottom>
                   <ReviewCard data={review}></ReviewCard>
                 </Fade>
-                <Fade bottom>
-                  <ReviewCard data={review}></ReviewCard>
-                </Fade>
                 </>
               )
             })}
@@ -70,7 +67,9 @@ export const query = graphql`
         nodes {
           name,
           stars,
-          review,
+          review {
+            review
+          },
           image {
             file {
               url

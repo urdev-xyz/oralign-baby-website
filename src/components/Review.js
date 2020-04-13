@@ -21,7 +21,7 @@ export class ReviewCard extends React.Component{
                 {Array(this.props.data.stars).fill(<Star fill={true}/>)} 
                 {leftOver > 0 ? Array(leftOver).fill(<Star fill={false}/>) : ""}
                 </div>
-                <div className="quote">{this.props.data.review}</div>
+                <div className="quote">{this.props.data.review.review}</div>
             </div>
         )
     }
