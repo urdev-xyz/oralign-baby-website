@@ -143,14 +143,16 @@ main {
         box-shadow: -2px 0px 5px -1px lightgrey;
         position: fixed;
         height: 100%;
+        width: 100%;
+        z-index: 2000;
       }
       .menu-closed {
-        transform: translateX(100%);
+        transform: translateX(100vw);
         
       }
       @keyframes slideout {
         from {
-          transform: translateX(100%);
+          transform: translateX(100vw);
         }
         to {
           transform: translateX(0);
@@ -789,10 +791,16 @@ main {
 .our-mission {
   display: flex;
   .our-mission-image {
-    background: $std-blueish-grey;
     max-width: 500px;
     width: 50%;
     min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      height: 100%;
+
+    }
   }
   .our-mission-content {
     max-width: 500px;

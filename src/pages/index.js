@@ -18,7 +18,11 @@ import Fade from 'react-reveal/Fade';
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 
+import john from '../images/cap1.jpg'
+
+
 require('details-polyfill')
+
 
 
 
@@ -69,7 +73,6 @@ const IndexPage = ({ data }) => {
               Seconds to see the difference.
             </section>
             <section className="header-subline">
-              keeping little fingers safe
             </section>
             <div className="button-container">
               <AmazonButton/>
@@ -257,7 +260,9 @@ rejection in contrast to some pacifiers that require moving up to stiffer, highe
     </div>
     <Fade>
     <div className="our-mission home-section">
-      <div className="our-mission-image"></div>
+      <div className="our-mission-image">
+        <img src={john}></img>
+      </div>
       <div className="our-mission-content">
         <p>Our mission at Oralign Baby is to discover and develop novel designs and solutions that have a meaningful benefit for the children of our world. All of our discovery and design is based on peer-reviewed clinical science and testing that is reproducible while all of our claims and benefits are equally verifiable.</p>
         <Link to="/our-story" ><button>Read More</button></Link>
