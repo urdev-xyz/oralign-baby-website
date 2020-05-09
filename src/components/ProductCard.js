@@ -5,7 +5,7 @@ import {WalmartButton, AmazonButton} from '../components/buttons'
 export class ProductCardPreview extends React.Component{
     render() {
         return (
-            <Link to="/product/mypaci" className="product-preview-wrapper">
+            <Link to="/product" className="product-preview-wrapper">
             <div className="product-card-preview">
                 <div className="product-card-preview-inner">
                     <img src={this.props.src}/>
@@ -33,7 +33,7 @@ export class ProductCard extends React.Component{
 
                     <div className="button-container">
                         <AmazonButton/>
-                        <Link to="/somethi"><button className="white">Learn More</button></Link>
+                        {this.props.shouldShowLearnMore ? <Link to="/product"><button className="white">Learn More</button></Link> : <></>}
                     </div>
                 </div>
             </div>
