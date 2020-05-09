@@ -6,7 +6,7 @@ import {PageHeader} from "../components/page-header"
 import SEO from "../components/seo"
 
 import "./styles/index.scss"
-import productBanner from '../images/productBanner.JPG'
+import productBanner from '../images/productBanner.png'
 import {ProductCardPreview, ProductCard} from '../components/ProductCard'
 
 const Product = ({ data }) => {
