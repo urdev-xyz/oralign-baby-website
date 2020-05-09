@@ -76,7 +76,7 @@ const IndexPage = ({ data }) => {
             </section>
             <div className="button-container">
               <AmazonButton/>
-              <Link to="/somethi"><button className="white">Learn More</button></Link>
+              <Link to="/product"><button className="white">Learn More</button></Link>
             </div>
             <span>MADE IN THE USA | 100% MEDICAL GRADE SILICONE</span>
             </div>
@@ -236,7 +236,7 @@ rejection in contrast to some pacifiers that require moving up to stiffer, highe
     <div className="products-container home-section">
     {products.map(product => {
       return (
-        <Fade bottom><ProductCard name={product.name} price={product.price} description={product.description} src={product.image.file.url}/></Fade>
+        <Fade bottom><ProductCard shouldShowLearnMore={true}name={product.name} price={product.price} description={product.description} src={product.image.file.url}/></Fade>
       )
     })}
     </div>
