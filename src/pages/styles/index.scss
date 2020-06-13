@@ -1,3 +1,9 @@
+@import "~video-react/styles/scss/video-react"; // or import scss
+.page-header {
+    background-image: url('../../images/hero-colored.jpg');
+    background-size: cover;
+    background-position: center;
+}
 .page-container {
     width: 100%;
     display: flex;

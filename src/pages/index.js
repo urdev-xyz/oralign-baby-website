@@ -14,6 +14,10 @@ import {WalmartButton, AmazonButton} from '../components/buttons'
 import {ProductCardPreview, ProductCard} from '../components/ProductCard'
 import { Star, ReviewCard } from '../components/Review'
 import Fade from 'react-reveal/Fade';
+import { Player, BigPlayButton } from 'video-react';
+
+import VIDEO from '../images/vid.mp4'
+import VIDEOPOSTER from '../images/poster.jpg'
 
 import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
@@ -258,6 +262,18 @@ rejection in contrast to some pacifiers that require moving up to stiffer, highe
         )
       })}
     </div>
+    <Fade>
+    <div className="home-video home-section">
+    <Player
+              playsInline
+              poster={VIDEOPOSTER}
+              src={VIDEO}
+              
+            >
+              <BigPlayButton position="center" />
+            </Player>
+    </div>
+    </Fade>
     <Fade>
     <div className="our-mission home-section">
       <div className="our-mission-image">

@@ -4,6 +4,11 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import {PageHeader} from "../components/page-header"
 import SEO from "../components/seo"
+import { Player, BigPlayButton } from 'video-react';
+
+import VIDEO from '../images/vid.mp4'
+import VIDEOPOSTER from '../images/poster.jpg'
+
 
 import "./styles/index.scss"
 import productBanner from '../images/productBanner.png'
@@ -32,6 +37,7 @@ const Product = ({ data }) => {
     padding: 10
   }
   const products = data.allContentfulProduct.nodes
+
   return (
     <Layout>
         <div className="page-container">
@@ -46,8 +52,15 @@ const Product = ({ data }) => {
                     <img style={img} src={productBanner}></img>
                 </div>
             </div>
-
+            
             <p >MyPaci® is not another “hospital pacifier”, but is an all new pacifier designed to be a premium upgrade with true benefits for the child who prefers the traditional round, hospital type of pacifiers.</p>
+            <Player
+              playsInline
+              poster={VIDEOPOSTER}
+              src={VIDEO}
+            >
+              <BigPlayButton position="center" />
+            </Player>
             <div className="product-facts-container">
               <div className="product-fact">
                 <h1>Finger Safe</h1>

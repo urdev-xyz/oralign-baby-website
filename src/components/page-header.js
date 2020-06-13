@@ -6,7 +6,6 @@ export class PageHeader extends React.Component{
         width: '100%',
         minHeight: '120px',
         marginBottom: 15,
-        backgroundColor: '#9b9b9b',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
