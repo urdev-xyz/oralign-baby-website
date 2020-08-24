@@ -88,7 +88,7 @@ const Layout = ({ children }) => {
           {announcement.show ? <div className="announcment"><a target="_Blank" href={announcement.link}>{announcement.message}</a></div> : <></>}
           <nav className="main-navigation">
             <div className="space"></div>
-            <img src={oralignLogo}></img>
+            <Link to="/"><img src={oralignLogo}></img></Link>
             <div className="space">
               <HamburgerMenu
                   isOpen={state.open}
