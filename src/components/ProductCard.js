@@ -28,7 +28,6 @@ export class ProductCard extends React.Component{
                 <img src={this.props.src}></img>
                 <div className="product-card-content">
                     <h1>{this.props.name}</h1>
-                    <p>{this.props.description}</p>
                     <p className="price">${this.props.price}</p>
 
                     <div className="button-container">
